@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "cn.bid",
+    "module": "bid-sdk",
+    "version": "0.0.1-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "bid-sdk-0.0.1-SNAPSHOT.jar",
+          "url": "bid-sdk-0.0.1-SNAPSHOT.jar",
+          "size": 46089,
+          "sha512": "fc4c3ac7382f3df05566381e7835dc09e58200eb3eaacd4670e8fbfbc6799718871ac2db69b130d432a4604939fd9d5a44ce9324b2e2271cf352bf57a3a38fe1",
+          "sha256": "4b39b79477f3fb87c5139ce6769311266c3d5d88e05d3d3cbbaded4af2189e65",
+          "sha1": "53e75e1618a28d2f71e373552970e54a43b25912",
+          "md5": "2207e16f4aec6efe3b3fddaf5ea0c883"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "net.i2p.crypto",
+          "module": "eddsa",
+          "version": {
+            "requires": "0.3.0"
+          }
+        },
+        {
+          "group": "commons-codec",
+          "module": "commons-codec",
+          "version": {
+            "requires": "1.15"
+          }
+        },
+        {
+          "group": "org.bouncycastle",
+          "module": "bcprov-jdk15on",
+          "version": {
+            "requires": "1.70"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "bid-sdk-0.0.1-SNAPSHOT.jar",
+          "url": "bid-sdk-0.0.1-SNAPSHOT.jar",
+          "size": 46089,
+          "sha512": "fc4c3ac7382f3df05566381e7835dc09e58200eb3eaacd4670e8fbfbc6799718871ac2db69b130d432a4604939fd9d5a44ce9324b2e2271cf352bf57a3a38fe1",
+          "sha256": "4b39b79477f3fb87c5139ce6769311266c3d5d88e05d3d3cbbaded4af2189e65",
+          "sha1": "53e75e1618a28d2f71e373552970e54a43b25912",
+          "md5": "2207e16f4aec6efe3b3fddaf5ea0c883"
+        }
+      ]
+    }
+  ]
+}

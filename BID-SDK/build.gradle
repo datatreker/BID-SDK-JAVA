@@ -1,0 +1,57 @@
+plugins {
+    id "java"
+    id "idea"
+    id 'java-library'
+    id "maven-publish"
+}
+
+group = "cn.bid"
+version = "0.0.1-SNAPSHOT"
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+configurations.all() {
+    resolutionStrategy {
+        force 'com.google.guava:guava:29.0-jre'
+        cacheChangingModulesFor 0, 'seconds'
+    }
+
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "net.i2p.crypto:eddsa:0.3.0"
+    implementation "commons-codec:commons-codec:1.15"
+    implementation group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.70'
+    testImplementation(platform('org.junit:junit-bom:5.7.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            url = version.contains('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            allowInsecureProtocol true
+            credentials {
+                username = repoUsername
+                password = repoPassword
+            }
+        }
+    }
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifactId = 'bid-sdk'
+        }
+    }
+}
